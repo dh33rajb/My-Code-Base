@@ -1,4 +1,13 @@
 // Flatten a Linked List Java
+/*
+I hardcoded the inputs, for the sake of simplicity and quick completion
+
+Input: (Harcoded in code)
+[[4, 5], [1, 2, 3], [8, 9, 10], [6, 7], [11, 12]]
+
+Output:
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+*/
 import java.util.*;
 import java.lang.*;
 
