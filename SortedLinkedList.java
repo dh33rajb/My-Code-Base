@@ -21,7 +21,7 @@ public class SortedLinkedList {
         ListIterator<Integer> itr = input.listIterator();
         while (itr.hasNext()) {
             int next = itr.next();
-            if (value < next) {
+            if (value <= next) {
                 itr.set (value);
                 itr.add (next);
                 flag = true;
