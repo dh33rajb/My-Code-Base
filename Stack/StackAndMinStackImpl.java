@@ -35,7 +35,7 @@ Min stack: [10, 9, 8, 7, 6, 5, 4]
 import java.util.*;
 import java.lang.*;
 
-public class StackImpl {
+public class StackAndMinStackImpl {
     private static Stack<Integer> minStack;
     public static void main (String args[]) {
         List <Integer> stack = new ArrayList <Integer> ();
