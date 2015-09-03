@@ -66,14 +66,14 @@ public class MaxHeapMinHeapImpl {
         int parentIndex = (currIndex - 1)/2;
         
         while (parentIndex >= 0) {
-            if (minHeap.get(parentIndex) < minHeap.get(currIndex))
+            if (minHeap.get(parentIndex) <= minHeap.get(currIndex))
                 return minHeap;
             // else swapping needs to be done
             int temp = minHeap.get(parentIndex);
             minHeap.set (parentIndex, minHeap.get(currIndex));
             minHeap.set (currIndex, temp);
             currIndex = parentIndex;
-            parentIndex = (currIndex - 1)/2;
+            parentIndex = (currIndex - 1) / 2;
         }
         return minHeap;
     }
