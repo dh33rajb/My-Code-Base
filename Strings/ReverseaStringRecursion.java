@@ -4,7 +4,7 @@
 import java.util.*;
 import java.lang.*;
 
-public class ReverseString {
+public class ReverseaStringRecursion {
     public static void main (String args[]) {
         // Step-1
         Scanner scanner = new Scanner (System.in);
