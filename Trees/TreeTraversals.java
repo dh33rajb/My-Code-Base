@@ -1,5 +1,5 @@
 /* 
-In-Order successor of a BST
+Tree Traversals of a BST
 Input:
 5 3 8 2 4 1 7 9 6
  
