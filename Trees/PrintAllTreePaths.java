@@ -13,7 +13,7 @@ All paths of the given tree:
 import java.util.*;
 import java.lang.*;
 
-public class PrintTreePaths {
+public class PrintAllTreePaths {
     public static void main (String args[]) {
         Node rootNode = null;
         // Step-1: Read inputs and form a tree
