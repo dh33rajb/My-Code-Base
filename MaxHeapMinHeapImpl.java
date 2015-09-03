@@ -1,5 +1,4 @@
 // INCOMPLETE
-
 // Max Heap and Min Heap implementation
 
 import java.util.*;
@@ -73,6 +72,8 @@ public class MaxHeapMinHeapImpl {
             int temp = minHeap.get(parentIndex);
             minHeap.set (parentIndex, minHeap.get(currIndex));
             minHeap.set (currIndex, temp);
+            currIndex = parentIndex;
+            parentIndex = (currIndex - 1)/2;
         }
         return minHeap;
     }
