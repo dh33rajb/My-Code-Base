@@ -6,7 +6,7 @@
 import java.util.*;
 import java.lang.*;
 
-public class SortedLinkedList {
+public class InsertIntoSortedLinkedList {
     public static void main (String args[]) {
         List <Integer> input = new LinkedList<Integer>();
         // Step-1: Reading inputs
