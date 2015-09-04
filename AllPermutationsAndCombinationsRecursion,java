@@ -1,0 +1,36 @@
+// ALL PERMUTATIONS AND ALL COMBINATIONS OF STRINGS - using RECURSION
+
+import java.util.*;
+import java.lang.*;
+
+public class AllPermutationsAndCombinationsRecursion {
+    public static void main (String args[]) {
+        // Step-1: Read inputs
+        Scanner scanner = new Sacnenr (System.in);
+        String input = scanner.nextLine();
+        
+        // Step-2: All permutations - recursion
+        Map<Character, Boolean> map = new HashMap<Character, Boolean>();
+        for (char c : input.toCharArray())
+            map.add (c, false);
+            
+        List <String> allPermutations = computeAllPermutations (input, map, 0, input.length() - 1);
+        System.out.println (allPermutations);
+    }
+    
+    public static List <String> computeAllPermutations (String input, Map<Character, Boolean> map, int startIndex, int endIndex) {
+        List<String> output = new ArrayList<String>();
+        String currString = "":
+        if (startIndex == endIndex) {
+            output.add (input);
+            return output;
+        }
+        for (int i=startIndex; i <= endIndex; i++) {
+            if (!map.get(i)) {
+                computeAllPermutations ();
+            }
+        }
+        
+        
+    }
+}
