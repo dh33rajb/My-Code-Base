@@ -1,4 +1,4 @@
-// LONGEST COMMON SUB SEQUENCE
+// LONGEST COMMON SUB String
 /*
 Input:
 abcdefghijk & abzdefxghijk
