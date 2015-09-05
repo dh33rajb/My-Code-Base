@@ -1,6 +1,6 @@
 // LONGEST COMMON SUB String
 /*
-Input:
+Input (Hardcoded for simplicity):
 abcdefghijk & abzdefxghijk
 
 Output:
