@@ -3,6 +3,11 @@ You are a professional robber planning to rob houses along a street. Each house 
 
 Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
 
+Logic:
+for (every element in input array)
+    incl = prevExcl + current array element;
+    excl = Math.max (prevIncl, prevExcl);
+
 Input (Hardcoded for simplicity):
 [5, 5, 10, 40, 50, 35]
 
@@ -23,9 +28,11 @@ public class HouseRobberAdjacent {
       int excl = 0;
       for (int i=0; i<nums.length; i++) {
         int prevExcl = excl;
-        excl = Math.max (incl, excl);
+        int prevIncl = incl;
+        excl = Math.max (prevIncl, prevExcl);
         incl = prevExcl + nums[i];
+        System.out.println (incl + "--" + excl);
       }
-      System.out.println (Math.max (incl, excl));
+      System.out.println ("Output: " + Math.max (incl, excl));
     }
 }
