@@ -16,8 +16,6 @@ Output:
 
 80
 */
-
-
 public class HouseRobberAdjacent {
     public static void main (String args[]) {
       int nums[] = new int [] {5, 5, 10, 40, 50, 35};
