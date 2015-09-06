@@ -15,7 +15,7 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class SerializeAndDesirializeBinaryTree {
+class SerializeCOMPLETEBinaryTree {
   @SuppressWarnings({"unchecked", "deprecation"})
   public static void main(String args[]) {
     // Step-1: Create a binary tree
