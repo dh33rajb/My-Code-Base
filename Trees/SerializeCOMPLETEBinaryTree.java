@@ -1,6 +1,6 @@
 // Serialize a COMPLETE BINARY Tree (DOES NOT WORK FOR BINARY TREES THAT ARE NOT COMPLETE)
 /*
-
+Solution: Use Level-Order Traversal
 Input (Hardcoded):
 ------
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
