@@ -1,4 +1,4 @@
-// Serialize a Binary Tree
+// Serialize a COMPLETE BINARY Tree (DOES NOT WORK FOR BINARY TREES THAT ARE NOT COMPLETE)
 /*
 
 Input (Hardcoded):
