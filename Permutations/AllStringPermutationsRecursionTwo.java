@@ -11,7 +11,7 @@ bca
 cba
 cab
 */
-public class AllStringPermutationsDP {
+public class AllStringPermutationsRecursionTwo {
 	public static void main(String args[]) {
 		String input = "abc";
 		char[] inputArr = input.toCharArray();
