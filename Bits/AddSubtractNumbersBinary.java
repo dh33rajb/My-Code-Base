@@ -5,7 +5,7 @@
 import java.util.*;
 import java.lang.*;
 
-public class AddSubtractBinary {
+public class AddSubtractNumbersBinary {
     public static void main (String args[]) {
         int num1 = 1; int num2 = 1;
         int sum = addNumbers(num1, num2);
