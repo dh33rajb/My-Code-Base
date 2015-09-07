@@ -17,7 +17,7 @@ Output:
 import java.util.*;
 import java.lang.*;
 
-public class BinaryOneBitsInaNumber {
+public class CountOfOneBitsInaNumber {
   public static void main (String args[]) {
     int positiveInput = 6;
     int negativeInput = -1;
