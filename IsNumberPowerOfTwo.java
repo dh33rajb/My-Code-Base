@@ -7,7 +7,7 @@ Ex:
 import java.util.*;
 import java.lang.*;
 
-public class TwosPowerBits {
+public class IsNumberPowerOfTwo {
   public static void main (String args[]) {
     int yesInput = 32;
     int noInput = 12;
