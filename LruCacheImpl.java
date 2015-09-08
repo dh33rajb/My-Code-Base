@@ -1,34 +1,61 @@
+// LRU CACHE IMPLEMENTATION
+/*
+Input:
+------
+int[] input = new int[] {2, 3, 4, 2, 1, 3, 7, 5, 4, 3};
+
+Output: (after all operations)
+------
+2-null
+3-9
+4-8
+2-null
+1-null
+3-9
+7-null
+5-7
+4-8
+3-9
+*/
+
 import java.io.*;
 import java.util.*;
 
-class Solution {
+public class LruCacheDriver {
   public static void main(String[] args) {
     
     // Step-1: Define inputs
     int[] input = new int[] {2, 3, 4, 2, 1, 3, 7, 5, 4, 3};
     int cacheSize = 3;
+    LruCache lruCache = new LruCache (cacheSize);
     
     // Step-2: set to cache
-    final Map<Integer, Integer> lruCache = new HashMap<Integer, Integer>();
     int count = 0;
-    for (int i : input) {
-      setKey (lruCache, i, count++);
-      /* for (Map.Entry<Integer, Integer> e : lruCache.entrySet())
-        System.out.print (e.getKey() + "-");
-      System.out.println(); */
-    }
+    for (int i : input)
+      lruCache.setKey(i, count++);
     
     // Step-3: get from cache
     for (int i : input) {
-      int value = getKey (lruCache, i);
+      int value = lruCache.getKey (i);
       if (value == Integer.MIN_VALUE)
         System.out.println (i + "-" + null);
       else
         System.out.println (i + "-" + value);
     }
   }
+}
+
+class LruCache {
   
-  public static void setKey (Map<Integer, Integer> lruCache, int key, int value) { // key = number; value=index
+  public int size;
+  public Map<Integer, Integer> lruCache;
+  
+  public LruCache (int size) {
+    this.size = size;
+    this.lruCache = new HashMap<Integer, Integer>();
+  }
+  
+  public void setKey (int key, int value) { // key = number; value=index
     if (lruCache.get (key) != null) // number exists in cache.. update index
       lruCache.put (key, value);
     else if (lruCache.size() < 3) // cache size less than limit.. add new number
@@ -51,7 +78,7 @@ class Solution {
     }
   }
   
-  public static int getKey(Map<Integer, Integer> lruCache, int key) {
+  public int getKey(int key) {
     if (lruCache.get(key)!= null)
       return lruCache.get (key);
     else
