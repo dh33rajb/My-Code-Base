@@ -5,6 +5,7 @@ Create a Json like object to representation and implement a flatten method to re
 {x:1, y:1, z:{a:1,b:2}} flattens to {x:1, y:1, z.a:1, z.b: 2}
 {x:1, y:1, z:{a:{b:2}} flattens to {x:1, y:1, z.a.b:2}
 {x:1, y:1, z:{a:{b:2}, c:3} flattens to {x:1, y:1, z.a.b:2, z.c:3}
+{x:1, y:{a:{b:2,c:{d:3, e:4}}}}
 
 */
 
@@ -14,19 +15,30 @@ import java.util.*;
 public class FlattenJsonString {
   
   public static void main(String[] args) {
-    String input = "{x:1, y:1, z:{a:{b:2}, c:3}";
-    String output = "";
-    Stack<String> stack = new Stack<String>();
-    System.out.println (input);
-    output = flattenJson(input, stack);
-    System.out.println (output);
+    // String input = null;
+    //String input = "{x:1, y:1, z:{a:1,b:2}}";
+    //String input = "{x:1, y:1, z:{a:{b:2}}";
+    //String input = "{x:1, y:1, z:{a:{b:2}, c:3}";
+    
+    String input = "{x:1, y:{a:{b:2,c:{d:3, e:4}}}}";
+    System.out.println ("Input: " + input);
+    
+    String output = flattenJson(input);
+    System.out.println ("Output: " + output);
     }
   
-  public static String flattenJson (String input, Stack<String> stack) {
+  public static String flattenJson (String input) {
+    // Base conditions
+    if (input == null || input.length() == 0)
+      return "INVALID INPUT";
+    
+    // Initialization
     String output = "";
     boolean flag = false;
+    Stack<String> stack = new Stack<String>();
     List<Character> parentNestList = new ArrayList<Character>();
     
+    // Core logic
     for (int i=0; i < input.length(); i++) {
           char currChar = input.charAt(i);
           switch (currChar) {
@@ -34,19 +46,16 @@ public class FlattenJsonString {
               if (i != 0)
                 flag = true;
               break;
-
             case '}':
               if (i != (input.length()-1) && parentNestList.size()>0)
                 parentNestList.remove(parentNestList.size()-1);
               break;
-            
             case ':':
               break;
             case ',':
               break;
             case ' ':
               break;
-
             default:
               if (flag) {
                 parentNestList.add (stack.pop().charAt(0));
@@ -64,11 +73,18 @@ public class FlattenJsonString {
                 stack.push (String.valueOf(currChar));
               }
           }
-        System.out.println(stack);
+        // System.out.println(stack);
     }
-    boolean flag2=true;
-    for (int i=0; i < stack.size(); i++) {
+    boolean flag2 = true;
+    output = stack.pop();
+    while (!stack.isEmpty()) {
+      if (flag2)
+        output = stack.pop () + ":" + output;
+      else
+        output = stack.pop () + ", " + output;
+      flag2 = !flag2;
     }
+    output = "{" + output + "}";
     return output;
   }
 }
