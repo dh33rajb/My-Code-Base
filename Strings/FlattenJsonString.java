@@ -11,7 +11,7 @@ Create a Json like object to representation and implement a flatten method to re
 import java.io.*;
 import java.util.*;
 
-class Solution {
+public class FlattenJsonString {
 
   public static void main(String[] args) {
     // String input = null;
