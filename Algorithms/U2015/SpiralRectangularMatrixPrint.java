@@ -2,11 +2,11 @@
 /*
 Input:
 -----
-0	1	2	3	
-4	5	6	7	
-8	9	10	11	
-12	13	14	15	
-16	17	18	19
+0  1  2  3  
+4  5  6  7  
+8  9  10  11  
+12  13  14  15  
+16  17  18  19
 
 Output:
 ------
@@ -18,7 +18,7 @@ import java.lang.*;
 
 public class SpiralRectangularMatrixPrint {
   public static void main (String args[]) {
-    int rows = 5; int cols = 5; int counter=0;
+    int rows = 5; int cols = 4; int counter=0;
     int [][] matrix = new int [rows][cols];
     
     // Step-1: Populate inputs
