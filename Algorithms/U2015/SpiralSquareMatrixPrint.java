@@ -1,12 +1,12 @@
-// write code to print the matrix from outside to inside. (spiral print matrix)
+// SPIRAL SQUARE MATRIX
 /*
 Input:
 -----
-0	1	2	3	4	
-5	6	7	8	9	
-10	11	12	13	14	
-15	16	17	18	19	
-20	21	22	23	24	
+0  1  2  3  4  
+5  6  7  8  9  
+10  11  12  13  14  
+15  16  17  18  19  
+20  21  22  23  24  
 
 Output:
 ------
@@ -18,12 +18,12 @@ import java.lang.*;
 
 public class SpiralSquareMatrixPrint {
   public static void main (String args[]) {
-    int rows = 5; int cols = 5; int counter = 0;
-    int [][] matrix = new int [rows][cols];
+    int rows = 4; int counter=0;
+    int [][] matrix = new int [rows][rows];
     
     // Step-1: populate inputs
     for (int i=0; i < rows; i++) {
-      for (int j=0; j < cols; j++) {
+      for (int j=0; j < rows; j++) {
         matrix[i][j] = counter++;
         System.out.print (matrix[i][j] + "\t");
       }
@@ -39,24 +39,23 @@ public class SpiralSquareMatrixPrint {
       List<Integer> bottomRow = new ArrayList<Integer>();
       List<Integer> leftCol = new ArrayList<Integer>();
       
-      for (int j=i; j < cols-i; j++) {
+      for (int j=i; j < rows-i; j++) {
         // top row
         topRow.add (matrix[i][j]);
-        // right col
-        rightCol.add (matrix[j][cols-1-i]);
-        // bottom row
-        bottomRow.add (matrix[rows-1-i][cols-1-j]);
-        // left col
-        leftCol.add (matrix[rows-1-j][i]);
+        if (j!=i) {
+          // right col
+          rightCol.add (matrix[j][rows-1-i]);
+          // bottom row
+          bottomRow.add (matrix[rows-1-i][rows-1-j]);
+        }
+        if (j!=i && j!=(rows-1-i))
+          // left col
+          leftCol.add (matrix[rows-1-j][i]);
       }
-      for (int a=0; a < topRow.size();a++)
-        output.add (topRow.get(a));
-      for (int b=1; b < rightCol.size();b++)
-        output.add (rightCol.get(b));
-      for (int c=1; c < bottomRow.size();c++)
-        output.add (bottomRow.get(c));
-      for (int d=1; d < leftCol.size()-1;d++)
-        output.add (leftCol.get(d));
+      output.addAll(topRow);
+      output.addAll(rightCol);
+      output.addAll(bottomRow);
+      output.addAll(leftCol);
     }
     System.out.println (output);
   }
