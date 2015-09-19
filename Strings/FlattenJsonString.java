@@ -35,22 +35,16 @@ public class FlattenJsonString {
                 flag = true;
               break;
 
-            case ':':
-              // text
-              break;
-
-            case ',':
-              // text
-              break;
-
             case '}':
-              // text
               if (i != (input.length()-1) && parentNestList.size()>0)
                 parentNestList.remove(parentNestList.size()-1);
               break;
             
+            case ':':
+              break;
+            case ',':
+              break;
             case ' ':
-              // text
               break;
 
             default:
@@ -71,6 +65,9 @@ public class FlattenJsonString {
               }
           }
         System.out.println(stack);
+    }
+    boolean flag2=true;
+    for (int i=0; i < stack.size(); i++) {
     }
     return output;
   }
