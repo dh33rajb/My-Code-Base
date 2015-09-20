@@ -56,7 +56,7 @@ public class PigLatinEncodingAndDecoding {
   }
   
   public static String doPigLatinDecoding (String pigLatinEncodedText) {
-    if (pigLatinEncodedText == null || pigLatinEncodedText.size() < 0)
+    if (pigLatinEncodedText == null || pigLatinEncodedText.length() < 0)
       return "";
     return "";
   }
