@@ -7,9 +7,16 @@ To translate word into Piglatin word,
   1. convert the word into uppercase, and then 
   2. place the first vowel of the original word as the start of the new word along with the remaining alphabets. 
   3. The alphabets present before the vowel being shifted towards the end followed by “AY” if a word begins with consonant or with "YAY" if it begins with a vowel.
-  
-  London   ONDONLAY
-  Olympics   OLYMPICSAY
+
+Input & Output:
+--------------
+Input: QWERTY
+Encoded Text: ERTYQWAY
+Decoded Text: RTYQWE
+-------------------------
+Input: RTYQWE
+Encoded Text: ERTYQWAY
+Decoded Text: RTYQWE
 */
 import java.util.*;
 import java.lang.*;
@@ -17,12 +24,13 @@ import java.lang.*;
 public class PigLatinEncodingAndDecoding {
   public static void main (String args[]) {
     String input = "RTYQWE";
+    System.out.println ("Input: " + input.toUpperCase());
     
     String pigLatinEncodedText = doPigLatinEncoding (input);
-    System.out.println (pigLatinEncodedText);
+    System.out.println ("Encoded Text: " + pigLatinEncodedText);
     
     String pigLatinDecodedText = doPigLatinDecoding (pigLatinEncodedText);
-    System.out.println (pigLatinDecodedText);
+    System.out.println ("Decoded Text: " + pigLatinDecodedText);
   }
   
   public static String doPigLatinEncoding (String input) {
@@ -77,6 +85,7 @@ public class PigLatinEncodingAndDecoding {
       if (pigLatinEncodedText.charAt(i) == 'A' || pigLatinEncodedText.charAt(i) == 'E' || pigLatinEncodedText.charAt(i) 
           == 'I' || pigLatinEncodedText.charAt(i) == 'O' || pigLatinEncodedText.charAt(i) == 'U' ) {
         output = output + textMinusSuffix.substring (0, i)+textMinusSuffix.charAt(i);
+        return output;
       }
       else
         output = textMinusSuffix.charAt(i)+output;
