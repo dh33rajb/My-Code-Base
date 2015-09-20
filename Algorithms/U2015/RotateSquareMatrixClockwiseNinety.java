@@ -3,7 +3,7 @@ import java.util.List;
 
 // ROTATE SQUARE MATRIX BY NINETY
 
-public class RotateSquareMatrixNinety {
+public class RotateSquareMatrixClockwiseNinety {
   public static void main(String args[]) {
     // Step-1: Reading inputs
     int rows = 5; int counter=0;
