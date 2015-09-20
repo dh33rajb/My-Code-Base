@@ -16,7 +16,7 @@ import java.lang.*;
 
 public class PigLatinEncodingAndDecoding {
   public static void main (String args[]) {
-    String input = "yabcde";
+    String input = "RTYQWE";
     
     String pigLatinEncodedText = doPigLatinEncoding (input);
     System.out.println (pigLatinEncodedText);
@@ -26,6 +26,8 @@ public class PigLatinEncodingAndDecoding {
   }
   
   public static String doPigLatinEncoding (String input) {
+    if (input == null || input.length() < 0)
+      return "";
     StringBuilder preVowelOutput = new StringBuilder ("");
     StringBuilder postVowelOutput = new StringBuilder ("");
     
@@ -58,6 +60,27 @@ public class PigLatinEncodingAndDecoding {
   public static String doPigLatinDecoding (String pigLatinEncodedText) {
     if (pigLatinEncodedText == null || pigLatinEncodedText.length() < 0)
       return "";
-    return "";
+    
+    String textMinusSuffix = "";
+    if (pigLatinEncodedText.length() > 2) {
+      String suffix = pigLatinEncodedText.substring (pigLatinEncodedText.length() - 3, pigLatinEncodedText.length());
+      if (suffix.equals ("YAY")) {
+        textMinusSuffix = pigLatinEncodedText.substring (0, pigLatinEncodedText.length() - 3);
+        return textMinusSuffix;
+      }
+      else
+        textMinusSuffix = pigLatinEncodedText.substring (0, pigLatinEncodedText.length() - 2);
+    }
+    
+    String output = "";
+    for (int i=textMinusSuffix.length()-1; i >= 0; i--) {
+      if (pigLatinEncodedText.charAt(i) == 'A' || pigLatinEncodedText.charAt(i) == 'E' || pigLatinEncodedText.charAt(i) 
+          == 'I' || pigLatinEncodedText.charAt(i) == 'O' || pigLatinEncodedText.charAt(i) == 'U' ) {
+        output = output + textMinusSuffix.substring (0, i)+textMinusSuffix.charAt(i);
+      }
+      else
+        output = textMinusSuffix.charAt(i)+output;
+    }
+    return output;
   }
 }
