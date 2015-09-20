@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// ROTATE SQUARE MATRIX BY NINETY
+// ROTATE SQUARE MATRIX CLOCKWISE BY NINETY
 
 public class RotateSquareMatrixClockwiseNinety {
   public static void main(String args[]) {
