@@ -1,6 +1,4 @@
 // Given a list of words, find whether a new word is anagram of word in list
-// Print the word in the list that the input string is an anagram of
-
 /*
 Input:
 ------
