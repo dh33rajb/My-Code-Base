@@ -23,7 +23,7 @@ ccba
 import java.lang.*;
 import java.util.*;
 
-public class AllStringPermutationWithoutRepetetion {
+public class AllStringPermutationsWithoutRepetetion {
 
   public static void main(String args[]) {
     String str = "abcc";
