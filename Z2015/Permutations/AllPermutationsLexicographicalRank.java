@@ -1,3 +1,5 @@
+// BASE CASES AND CORNER CASES NOT YET HANDLED
+
 //Given all permutations of a string, give their lexicographical ranked order.
 /*
  Input:
