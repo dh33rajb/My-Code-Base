@@ -22,9 +22,11 @@ Output:
     4
 
 Explanation:
-
     [2, 4, 5] is a j member jump numbers, all leaves which are multiple of 2, 4, and 5 are eaten, leaves 1,3,7,9 are left, and thus the no. 4
 
+Solution:
+    1. Boolean array approach
+    2. Hash Set approach.
 */
 
 import java.util.*;
