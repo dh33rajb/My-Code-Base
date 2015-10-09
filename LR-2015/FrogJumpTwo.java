@@ -62,6 +62,5 @@ public class FrogJumpTwo {
 		return times[X];
 	}
 }
-
-// Note: Time complexity of O(N) is infeasible, as far as I understand. O(XD)
-// and O(NlogN) are two efficient solutions that come to my mind.
+// Note: Time complexity of O(N) is infeasible, as far as I understand. O(XD) [above implementation]
+// and O(NlogN) [using PriorityQueue or TreeMap] are two efficient solutions that come to my mind.
