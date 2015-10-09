@@ -1,5 +1,3 @@
-package com.liveramp;
-
 import java.util.Arrays;
 
 public class FrogJumpTwo {
