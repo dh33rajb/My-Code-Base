@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class FrogJumpTwo {
 	public static void main(String args[]) {
 		// Step-0: Driver calls
-		System.out.println(frogJump(new int[] { 0, 4, 5, 6, 7 }, 8, 4));
+		System.out.println(frogJump(new int[] { 1, 4, 6, 9 }, 8, 4));
 		System.out.println(frogJump(new int[] { 2, 3, 1, 4, 7, 5 }, 7, 5));
 		System.out.println(frogJump(new int[] { 4, 2, 3, 1 }, 7, 4));
 		System.out.println(frogJump(new int[] { 1, 3, 4, 5, 7, 2, 1, 4, 5, 6 },
