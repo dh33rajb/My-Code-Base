@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class FrogJumpTwo {
 	public static void main(String args[]) {
-		// Step-1: Driver calls
-		System.out.println(frogJump(new int[] { 0, 4, 5, 6, 7 }, 8, 2));
+		// Step-0: Driver calls
+		System.out.println(frogJump(new int[] { 0, 4, 5, 6, 7 }, 8, 4));
 		System.out.println(frogJump(new int[] { 2, 3, 1, 4, 7, 5 }, 7, 5));
 		System.out.println(frogJump(new int[] { 4, 2, 3, 1 }, 7, 4));
 		System.out.println(frogJump(new int[] { 1, 3, 4, 5, 7, 2, 1, 4, 5, 6 },
@@ -12,9 +12,9 @@ public class FrogJumpTwo {
 
 	// Time complexity: O(XD), approaches O(X) if D <<< X; Space complexity: O(X)
 	public static int frogJump(int[] arr, int X, int D) {
+
 		// Step-1: Create arrays of: 1) all "positions" from 0 to X, and
 		// 2) "times" when the leaf falls into each of those positions. ==> O(X)
-
 		int[] positions = new int[X + 1];
 		for (int i = 0; i <= X; i++)
 			positions[i] = i;
@@ -26,9 +26,6 @@ public class FrogJumpTwo {
 				times[arr[i]] = i;
 		}
 		times[X] = 0;
-
-		// System.out.println(Arrays.toString(positions));
-		// System.out.println(Arrays.toString(times));
 
 		// Step-2: Modify "times" array using DP, so it now has the "best times"
 		// to reach each of the positions in the positions array ==> O(XD)
@@ -55,10 +52,12 @@ public class FrogJumpTwo {
 				times[pos] = bestTime;
 			}
 		}
-		// System.out.println(Arrays.toString(times));
-		// Step-3: Return the best time to reach the destination: output
+		// Step-3: Return the best time to reach the destination- output
 		return times[X];
 	}
 }
-// Note: Time complexity of O(N) is infeasible, as far as I understand. O(XD) [above implementation]
-// and O(NlogN) [using PriorityQueue or TreeMap] are two efficient solutions that come to my mind.
+/*
+ * Note: Time complexity of O(N) is infeasible as far as I understand. O(XD)
+ * [above implementation] and O(NlogN) [using self-sorted data structures like
+ * PriorityQueue or TreeMap] are two efficient solutions that come to my mind.
+ */
