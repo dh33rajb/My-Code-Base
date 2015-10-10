@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Sequence {
 	public static void main(String args[]) {
-		System.out.println(maxSubSequence(new int[] {6, 10, 6, 9, 7, 8}));
+		System.out.println(maxSubSequence(new int[] {-1, -1, 1, 1, 0, 0, 1, -1, -1}));
 	}
 
 	// Time complexity: O(NlogN); Space complexity: O(1)
