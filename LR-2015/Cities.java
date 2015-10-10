@@ -6,8 +6,10 @@ import java.util.Map;
 
 public class Cities {
 	public static void main(String args[]) {
-		int[] output = citiesDistances(new int[] { 9, 1, 4, 9, 0, 4, 8, 9, 0, 1 });
-		System.out.println(Arrays.toString(output));
+		System.out.println(Arrays.toString(citiesDistances(new int[] { 6, 5, 3,
+				3, 3, 4, 4 })));
+		System.out.println(Arrays.toString(citiesDistances(new int[] { 9, 1, 4,
+				9, 0, 4, 8, 9, 0, 1 })));
 	}
 
 	public static int[] citiesDistances(int[] input) {
@@ -28,8 +30,8 @@ public class Cities {
 			}
 		}
 		int level = 0;
-		System.out.println(map);
-		return populateOutput(map, new int[input.length], level, capital);
+		// System.out.println(map);
+		return populateOutput(map, new int[input.length - 1], level, capital);
 	}
 
 	public static int[] populateOutput(Map<Integer, List<Integer>> map,
