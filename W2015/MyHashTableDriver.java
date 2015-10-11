@@ -8,7 +8,7 @@ class MyHashTable<K, V> {
 
 	private int capacity;
 
-	private List<List<MyEntry<K, V>>> cells;
+	private List<List<MyEntry<K, V>>> table;
 
 	// Default constructor with auto-assigned capacity of 100
 	public MyHashTable() {
@@ -20,10 +20,10 @@ class MyHashTable<K, V> {
 		this.capacity = capacity;
 		// ArrayList is used to hold the table as capacity can be pre-defined in
 		// ArrayLists
-		this.cells = new ArrayList<List<MyEntry<K, V>>>(this.capacity);
+		this.table = new ArrayList<List<MyEntry<K, V>>>(this.capacity);
 		int count = -1;
 		while (++count < this.capacity)
-			this.cells.add(null);
+			this.table.add(null);
 	}
 
 	// Put method of MyHashTable
@@ -32,7 +32,7 @@ class MyHashTable<K, V> {
 			throw new NullPointerException("Null keys/values are not allowed");
 
 		int cellIndex = this.hash(key);
-		List<MyEntry<K, V>> cell = this.cells.get(cellIndex);
+		List<MyEntry<K, V>> cell = this.table.get(cellIndex);
 		if (cell == null)
 			// LinkedList is used for each cell to chain keys during collisions
 			cell = new LinkedList<MyEntry<K, V>>();
@@ -49,7 +49,7 @@ class MyHashTable<K, V> {
 			}
 		}
 		cell.add(new MyEntry<K, V>(key, value));
-		this.cells.set(cellIndex, cell);
+		this.table.set(cellIndex, cell);
 	}
 
 	// Get method of MyHashTable
@@ -58,7 +58,7 @@ class MyHashTable<K, V> {
 			throw new NullPointerException("Null keys are not allowed");
 
 		int cellIndex = this.hash(key);
-		List<MyEntry<K, V>> cell = this.cells.get(cellIndex);
+		List<MyEntry<K, V>> cell = this.table.get(cellIndex);
 		if (cell != null) {
 			// key look-up: if key exists, return value; else, return null
 			Iterator<MyEntry<K, V>> iterator = cell.iterator();
