@@ -21,6 +21,7 @@ public class StringShuffle {
     StringBuilder output = new StringBuilder ("");
     
     // Step-3: Update the strings to modify words ==> O(N)
+    // Here we make use of the Collections.shuffle() function
     for (String s : inputStringArr) {
       if (s.length() <= 2)
         output.append (s).append (" ");
