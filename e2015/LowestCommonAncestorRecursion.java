@@ -11,7 +11,7 @@ class TreeNode {
 	}
 }
 
-public class LowestCommonAncestor {
+public class LowestCommonAncestorRecursion {
 	public static void main(String args[]) {
 		TreeNode root = new TreeNode(3);
 		root.left = new TreeNode(5);
