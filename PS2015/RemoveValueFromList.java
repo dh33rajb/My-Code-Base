@@ -2,11 +2,13 @@ import java.io.*;
 import java.util.*;
 
 /*
- * To execute Java, please define "static void main" on a class
- * named Solution.
- *
- * If you need more classes, simply define them inline.
- */
+Input:
+{1, 2, 2, 3, 4, 5, 5, 6, 7, 8}, 2
+
+Output:
+{1, 3, 4, 5, 5, 6, 7, 8}
+
+*/
 
 class RemoveValueFromList {
   public static void main(String[] args) {
