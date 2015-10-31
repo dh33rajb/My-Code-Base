@@ -1,7 +1,7 @@
 import java.util.*;
 import java.lang.*;
 
-public class ReverseALinkedList {
+public class LinkedListPalindrome {
 
   public static void main(String args[]) {
     ListNode node = new ListNode(1);
