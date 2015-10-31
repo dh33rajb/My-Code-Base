@@ -3,9 +3,9 @@
 import java.util.*;
 import java.lang.*;
 
-public class MiddleElementInRotatedSortedList {
+class MiddleElementInRotatedSortedList {
   public static void main (String args[]) {
-    System.out.println (findIndexOfRotation (new int[] {3, 1, 2}));
+    System.out.println (findIndexOfRotation (new int[] {4, 5, 6, 1, 2, 3, 4}));
   }
   
   public static int findIndexOfRotation (int[] input) {
@@ -26,7 +26,7 @@ public class MiddleElementInRotatedSortedList {
     }
     // generic condition
     int mid = (start + end) / 2;
-    if (input[mid] < input[mid-1] && input[mid] > input[mid+1])
+    if (input[mid] < input[mid-1] && input[mid] < input[mid+1])
       return mid;
     else if (input[mid] < input[start])
       return findIndexOfRotation (input, start, mid-1);
