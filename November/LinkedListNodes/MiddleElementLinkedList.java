@@ -22,7 +22,7 @@ public class MiddleElementLinkedList {
     Node slow = head;
     Node fast = head.next; // starting one step ahead of head
 
-    while (fast != null) {
+    while (fast != null && fast.next != null) {
       slow = slow.next;
       fast = fast.next != null? fast.next.next : null;
     }
