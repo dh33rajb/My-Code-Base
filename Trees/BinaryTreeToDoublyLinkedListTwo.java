@@ -1,27 +1,29 @@
-// Binary Tree - Level order traversal
+// BINARY TREE TO DOUBLY LINKED LIST - MY BEST
+// 1) IN-PLACE FLATTEN BINARY TREE TO SINGLY LINKED LIST
+// 2) REVERSE SINGLY LINKED LIST TO MAKE IT DOUBLY LINKED LIST
+
 import java.util.*;
 import java.lang.*;
 
 class BinaryTreeToDoublyLinkedListTwo {
   
-  private Node prev = null;
+  private static Node prev = null;
   public static void main (String args[]) {
-    // driver method
+    // Step-1: Populate inputs
     Node root = new Node (1);
     root.left = new Node (2);
     root.right = new Node (5);
     root.left.left = new Node (3);
     root.left.right = new Node (4);
-  
     root.right.right = new Node (6);
     
-    BinaryTreeToDoublyLinkedListTwo s = new BinaryTreeToDoublyLinkedListTwo ();
-    
-    s.flatten (root);
+    // Step-2: Flatten Binary tree to Singly linked list
+    flatten (root);
     Node head = root;
     
-    s.prev = null; // need a prev variable for this too, so resetting
-    Node tail = s.singlyToDoublyList (root);
+    // Step-3: Convery Singly linked list to doubly linked list (Reverse a linked list logic)
+    prev = null;
+    Node tail = singlyToDoublyList (root);
     
     while (head != null) {
       System.out.print (head.val + "-");
@@ -35,7 +37,7 @@ class BinaryTreeToDoublyLinkedListTwo {
     }
   }
   
-  public void flatten(Node root) {
+  public static  void flatten(Node root) {
     if (root == null)
       return;
     
@@ -47,7 +49,7 @@ class BinaryTreeToDoublyLinkedListTwo {
     prev = root; 
   }
   
-  public Node singlyToDoublyList (Node root) {
+  public static Node singlyToDoublyList (Node root) {
     if (root == null)
       return null;
     while (root != null) {
