@@ -15,7 +15,7 @@ import java.util.*;
 class Solution {
   
   public static void main(String[] args) {
-    String input = "\tdic1\n\t\tdic2\n\t\tdic3\n\t\t\tpic.png\n\t\t\tnote1.txt\n\t\t\tdic4\n\t\t\t\tdic6\n\t\t\t\t\tpic2.png\n\tdic5";
+    String input = "\tdic1\n\t\tdic2\n\t\t\tdic3\n\t\t\t\tpic.png";
     int output = findLongestLengthOfImage (input);
     System.out.println (output);
   }
@@ -60,6 +60,7 @@ class Solution {
     return output.length();
   }
   
+  // regex for pattern matching to count # of tabs
   public static int findMatches (String str) {
     java.util.regex.Pattern p = java.util.regex.Pattern.compile("\t");
     java.util.regex.Matcher m = p.matcher(str);
