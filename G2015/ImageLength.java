@@ -46,7 +46,7 @@ class Solution {
       c++;
     }
     // System.out.println (maxImageStr);
-    // now find the heirarchy of the string from root directory
+    // now find the heirarchy of the string reverse up from the image location
     String output = "";
     for (int i=imageIndex; i >= 0; i--) {
       String str = inputStr[i];
